@@ -29,20 +29,7 @@ namespace Squared
                 SquaredList.Add((number * number));
             }
 
-            List<int> removeNums = new List<int>();
-
-            foreach (var squaredNum in SquaredList)
-            {
-                if(squaredNum % 2 != 0)
-                {
-                    removeNums.Add(squaredNum);
-                }
-            }
-
-            foreach (var numToRemove in removeNums)
-            {
-                SquaredList.Remove(numToRemove);
-            }
+            SquaredList.RemoveAll(i => i % 2 != 0);
 
             foreach (var remainingSquare in SquaredList)
             {
